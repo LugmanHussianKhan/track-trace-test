@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { trackingConfig } from "@/utils/config";
+import { trackingConfig } from "@/utils/container.config";
 
 type result = {
   message: string
@@ -21,6 +21,7 @@ export default function Home() {
     if (shipmentProvider in trackingConfig) {
       trackingConfig[shipmentProvider].getTrackingInfo(trackingInput)
     }
+    console.log("form working")
   }
 
   return (
