@@ -15,7 +15,7 @@ export interface TrackingConfig {
     }
 }
 
-export const trackingConfig: TrackingConfig = {
+export const containerTrackingConfig: TrackingConfig = {
     "ZWFU": {
         type: trackingTypes.pathParam,
         providerName: "Zim World Freight",

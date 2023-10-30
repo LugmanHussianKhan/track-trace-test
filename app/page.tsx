@@ -3,7 +3,8 @@
 import { useState } from "react"
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { trackingConfig } from "@/utils/container.config";
+import { containerTrackingConfig } from "@/utils/container.config";
+import { BillOfLaddingTrackingConfig } from "@/utils/bl.config";
 
 type result = {
   message: string
@@ -18,8 +19,10 @@ export default function Home() {
 
   const onSearch = () => {
     const shipmentProvider = trackingInput.slice(0, 4);
-    if (shipmentProvider in trackingConfig) {
-      trackingConfig[shipmentProvider].getTrackingInfo(trackingInput)
+  
+  
+    if (shipmentProvider in BillOfLaddingTrackingConfig) {
+      BillOfLaddingTrackingConfig[shipmentProvider].getTrackingInfo(trackingInput)
     }
     console.log("form working")
   }
