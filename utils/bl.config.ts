@@ -551,7 +551,15 @@ export const BillOfLaddingTrackingConfig: TrackingConfig = {
             }
         }
     },
-    "": {
+    "WHLU": {
+        type: trackingTypes.manual,
+        providerName: "Wan Hai Lines",
+        getTrackingInfo: (trackingNumber: string) => {
+            navigator && navigator.clipboard && navigator.clipboard.writeText(trackingNumber)
+            window.open("https://www.wanhai.com/views/cargo_track_v2/tracking_query.xhtml")
+        }
+    },
+    "WHLC": {
         type: trackingTypes.manual,
         providerName: "Wan Hai Lines",
         getTrackingInfo: (trackingNumber: string) => {
